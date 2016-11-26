@@ -14,33 +14,33 @@ use utf8;
 use Text::Unidecode;
 
 my @feeds = (
-	'https://knoxville.craigslist.org/search/sof?format=rss',#software/qa/dba
-	'http://knoxville.craigslist.org/search/eng?format=rss',#internet eng
-#	'http://knoxville.craigslist.org/search/sad?format=rss',#systems/networking # Causes not an array reference bug
-	'http://knoxville.craigslist.org/search/tch?format=rss',#tech support
-	'http://knoxville.craigslist.org/search/web?format=rss',#web/info design
-	'http://knoxville.craigslist.org/search/cpg?format=rss' #computer gigs
+'https://knoxville.craigslist.org/search/sof?format=rss',#software/qa/dba
+'http://knoxville.craigslist.org/search/eng?format=rss',#internet eng
+'http://knoxville.craigslist.org/search/sad?format=rss',#systems/networking # Causes not an array reference bug
+'http://knoxville.craigslist.org/search/tch?format=rss',#tech support
+#'http://knoxville.craigslist.org/search/web?format=rss',#web/info design
+'http://knoxville.craigslist.org/search/cpg?format=rss' #computer gigs
 );
 
 my @skip_post_terms=(
-	qr{[-0-9 \$]+}m,
+#	qr{[-0-9 \$]+}m,
 	qr{[~=*|]+}m,
-	qr{affiliate}mi,
-	qr{agent}mi,
-	qr{an\+\+\+}mi, # Gets rid of a plastic surgery office looking for a secretary
-	qr{calls}mi,
-	qr{commission}mi,
-	qr{csr}mi,
-	qr{customer\s+support}mi,
-	qr{extra\s+income}mi,
+#	qr{affiliate}mi,
+#	qr{agent}mi,
+#	qr{an\+\+\+}mi, # Gets rid of a plastic surgery office looking for a secretary
+#	qr{calls}mi,
+#	qr{commission}mi,
+#	qr{csr}mi,
+#	qr{customer\s+support}mi,
+#	qr{extra\s+income}mi,
 	qr{hvac}mi,
-	qr{leads}mi,
+#	qr{leads}mi,
 	qr{marketing}mi,
-	qr{part\s+time}mi,
-	qr{phone}mi,
+#	qr{part\s+time}mi,
+#	qr{phone}mi,
 	qr{((?!tech).*?sale)|(sale.*?(?!tech))}mi,
-	qr{sign}mi,
-	qr{survey}mi
+#	qr{sign}mi,
+#	qr{survey}mi
 );
 
 for my $feed (@feeds){
@@ -60,7 +60,8 @@ for my $feed (@feeds){
 		#print "$title\n";
 
 		#$today="2015-04-23";
-		if ($posted_date =~ /^$today/){
+		#if ($posted_date =~ /^$today/){
+		if ($posted_date =~ /^.*?/){
 			#print "Posted Today\n";
 			# convert utf8 characters to ascii
 			$title =~ s/([^[:ascii:]]+)/unidecode($1)/ge;
