@@ -4,6 +4,7 @@
 # &copy; Michael Craze -- http://projectcraze.us.to
 #
 
+from time import gmtime, strftime
 import feedparser
 
 feeds=[
@@ -15,15 +16,21 @@ feeds=[
 'http://knoxville.craigslist.org/search/cpg?format=rss' #computer gigs
 ]
 
+now=strftime("%Y-%m-%d %H:%M:%S", gmtime())
+print now + "\n\n"
+
 for f in feeds:
-    #print f
-    d = feedparser.parse(f)
+    d=feedparser.parse(f)
+    print "---[[[[" + d.feed.title + "]]]]---\n\n"
     for post in d.entries:
         title=post.title.encode('ascii','replace')
         link=post.link.encode('ascii','replace')
         description=post.description.encode('ascii','replace')
-        print title + "\n\n"
-        print " " + link + "\n\n"
-        print " " + description + "\n\n\n"
-        print "========================================================\n\n\n:"
+        date=post.date
+        print " " + date + "\n\n"
+        print " " + title + "\n\n"
+        print "\t" + link + "\n\n"
+        print "\t" + description + "\n\n\n"
+        print "========================================================\n\n\n"
+    print "========================================================\n\n\n"
 
