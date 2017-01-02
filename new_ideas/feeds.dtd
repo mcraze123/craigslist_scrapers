@@ -1,0 +1,11 @@
+<!DOCTYPE feeds [
+<!ELEMENT feeds (feed+)>
+<!ELEMENT feed (url,included_terms+,excluded_terms?,gt_price?,lt_price?,ne_price?)>
+<!ELEMENT included_terms (term+)>
+<!ELEMENT excluded_terms (term+)>
+<!ELEMENT gt_price (price+)>
+<!ELEMENT lt_price (price+)>
+<!ELEMENT ne_price (price+)>
+<!ELEMENT term (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+]>

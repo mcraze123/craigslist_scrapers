@@ -14,7 +14,7 @@ use utf8;
 use Text::Unidecode;
 
 my @feeds = (
-'https://knoxville.craigslist.org/search/sof?format=rss',#software/qa/dba
+#'http://knoxville.craigslist.org/search/sof?format=rss',#software/qa/dba
 'http://knoxville.craigslist.org/search/eng?format=rss',#internet eng
 'http://knoxville.craigslist.org/search/sad?format=rss',#systems/networking # Causes not an array reference bug
 'http://knoxville.craigslist.org/search/tch?format=rss',#tech support

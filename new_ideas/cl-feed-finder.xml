@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE feeds SYSTEM "feeds.dtd">
+<feeds>
+	<feed>
+		<url>http://knoxville.craigslist.org/search/zip?format=rss</url>
+		<included_terms>
+			<term>tv</term>
+			<term>broken</term>
+		</included_terms>
+		<excluded_terms/>
+		<gt_price/>
+		<lt_price/>
+	</feed>
+	<feed>
+		<url>http://knoxville.craigslist.org/search/sya?format=rss</url>
+		<included_terms>
+			<term>broken</term>
+			<term>laptop</term>
+			<term>notebook</term>
+			<term>apple</term>
+		</included_terms>
+		<excluded_terms>
+			<term>wtb</term>
+			<term>buy</term>
+			<term>buying</term>
+		</excluded_terms>
+		<ne_price>
+			<price>1</price>
+		</ne_price>
+		<gt_price/>
+		<lt_price>
+			<price>100</price>
+		</lt_price>
+	</feed>
+	<feed>
+		<url>http://knoxville.craigslist.org/search/ela?format=rss</url>
+		<included_terms/>
+		<excluded_terms/>
+	</feed>
+</feeds>

@@ -1,0 +1,19 @@
+TODO:
+cl-laptop_finder.pl 
+-add all info to database
+-convert posted data to local time
+create table clitem ( item_id, posted_date, title, price, description );
+create table ( item_id, image_number, image_link )
+---possibly add more feeds to select from later, like electronics, video games, cell phones
+
+
+index.php
+-basic ebay (us) search page with options:
+	-buy it now  -price+shipping lowest as default
+	-auction  -ending soonest default
+	-completed listings
+-pull clitems table with all pictures and full description
+-automatically put title into ebay search box
+-do not save images, just use link to craigslist host
+
+
