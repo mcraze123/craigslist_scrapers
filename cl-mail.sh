@@ -11,7 +11,7 @@ if [ "$#" -ne 2 ] ; then
 	exit
 fi
 
-EMAIL="mcraze123@gmail.com"
+EMAIL="email@yourdominan.com"
 SUBJECT=$1
 CLSCRIPT=$2
 PERL=`which perl`
